@@ -68,10 +68,6 @@ function newGame() {
     }
 }
 
-function playerPick(playerPick) {
-    console.log(playerPick);
-}
-
 function getComputerPick() {
     var possiblePicks = ['kamień', 'papier', 'nożyce'];
     return possiblePicks[Math.floor(Math.random()*3)];
@@ -108,6 +104,9 @@ function checkRoundWinner(playerPick, computerPick) {
     } else if (winnerIs == 'computer') {
         computerResultElem.innerHTML = "Wygrana!";
         computer.score++;
+    } else {
+        playerResultElem.innerHTML = "Remis!";
+        computerResultElem.innerHTML = "Remis!";
     }
     setGamePoints();
 }
